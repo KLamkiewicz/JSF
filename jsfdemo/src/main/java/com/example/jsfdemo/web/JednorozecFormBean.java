@@ -33,7 +33,7 @@ public class JednorozecFormBean implements Serializable{
 	// Actions
 	public String addJednorozec() {
 		jednorozecManager.addJednorozec(jednorozec);
-		return "home"; //redirect home.xhtml
+		return "listaJednorozcow"; //redirect home.xhtml
 		//return null;
 	}
 	
