@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/mojDefault.xhtml">
+	<ui:define name="content">
+					<h:outputText value="Dodaj jednorozca" />
+		<h:form id="jednorozecform">
+			<h:panelGrid columns="2">
+				<h:outputText value="#{msg.jednorozecNameLabel}" />
+				<h:inputText id="imie" value="#{jednorozecBean.jednorozec.imie}" />
+				<h:outputText value="#{msg.jednorozecRokUrodzeniaLabel}"/>
+				<h:inputText id="rokUrodzenia" value="#{jednorozecBean.jednorozec.rokUrodzenia}"/>
+				<h:outputText value="#{msg.jednorozecDlugoscRoguLabel}"/>
+				<h:inputText id="dlugoscRogu" value="#{jednorozecBean.jednorozec.dlugoscRogu}"/>
+				<h:outputText value="#{msg.jednorozecMagicznyLabel}"/>
+				<h:inputText id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}"/>
+	
+			</h:panelGrid>
+			
+<h:commandButton value="#{msg.jednorozecFormOKButton}" action="#{jednorozecBean.addJednorozec}">
+	<f:actionListener action="#{listaJednorozcow?faces-redirect=true}" />
+</h:commandButton>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>	
