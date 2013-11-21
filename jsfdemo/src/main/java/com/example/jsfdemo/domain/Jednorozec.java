@@ -1,9 +1,14 @@
 package com.example.jsfdemo.domain;
 
-public class Jednorozec {
+import javax.validation.constraints.*;
+
+public class Jednorozec{
+	private int id;
 	private String imie;
+	@Max(2013)
 	private Integer rokUrodzenia;
 	private double dlugoscRogu;
+	private int regon;
 	private boolean magiczny;
 	
 	public Jednorozec(){
@@ -40,5 +45,23 @@ public class Jednorozec {
 
 	public void setMagiczny(boolean magiczny) {
 		this.magiczny = magiczny;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getRegon() {
+		return regon;
+	}
+
+	public void setRegon(int regon) {
+		this.regon = regon;
 	}	
+	
+	
 }

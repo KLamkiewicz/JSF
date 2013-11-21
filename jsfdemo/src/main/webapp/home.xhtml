@@ -9,6 +9,18 @@
 	-->
 
 	<ui:define name="content">
-		<p>#{msg.jednorozecInfo}</p>
+		<p>#{msg.jednorozecInfo}</p><br></br><br></br>
+		<p>#{msg.searchMsg}</p>
+	
+	
+	<h:form>
+		<h:panelGrid columns="2">
+				<h:outputText value="#{msg.yourName}" />
+				<h:inputText id="imie" value="#{jednorozecBean.jednorozec.imie}"/>
+		 </h:panelGrid>
+             
+         <h:commandButton value="#{msg.personFormOKButton}" action="szukaj?faces-redirect=true" />
+	</h:form>
+	
 	</ui:define>
 </ui:composition>

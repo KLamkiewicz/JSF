@@ -13,7 +13,11 @@
 				<h:outputText value="#{msg.jednorozecRokUrodzeniaLabel}"/>
 				<h:inputText id="rokUrodzenia" value="#{jednorozecBean.jednorozec.rokUrodzenia}"/>
 				<h:outputText value="#{msg.jednorozecDlugoscRoguLabel}"/>
-				<h:inputText id="dlugoscRogu" value="#{jednorozecBean.jednorozec.dlugoscRogu}"/>
+				<h:inputText id="dlugoscRogu" value="#{jednorozecBean.jednorozec.dlugoscRogu}">
+				<f:validateLongRange minimum="1"/>
+				</h:inputText>
+				<h:outputText value="#{msg.regon}"/>
+				<h:inputText id="regon" value="#{jednorozecBean.jednorozec.regon}"/>
 				<h:outputText value="#{msg.jednorozecMagicznyLabel}"/>
 				<h:inputText id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}"/>
 	

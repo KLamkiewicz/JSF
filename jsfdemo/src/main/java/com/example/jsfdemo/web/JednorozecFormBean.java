@@ -37,9 +37,19 @@ public class JednorozecFormBean implements Serializable{
 		//return null;
 	}
 	
+	public String deleteJednorozec(){
+		Jednorozec jednorozecToDelete = jednorozce.getRowData();
+		jednorozecManager.deleteJednorozec(jednorozecToDelete);
+		return null;
+	}
+	
 	public ListDataModel<Jednorozec> getJednorozce() {
 		jednorozce.setWrappedData(jednorozecManager.getJednorozce());
 		return jednorozce;
 	}
 	
+	public ListDataModel<Jednorozec> getSearchImie(){
+		jednorozce.setWrappedData(jednorozecManager.getSearchImie(jednorozec));
+		return jednorozce;
+	}
 }
