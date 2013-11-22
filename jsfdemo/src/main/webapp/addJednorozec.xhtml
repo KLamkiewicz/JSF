@@ -17,9 +17,11 @@
 				<f:validateLongRange minimum="1"/>
 				</h:inputText>
 				<h:outputText value="#{msg.regon}"/>
-				<h:inputText id="regon" value="#{jednorozecBean.jednorozec.regon}"/>
+				<h:inputText id="regon" value="#{jednorozecBean.jednorozec.regon}" validator="#{jednorozecBean.uniqueRegon}" required="#{true}">
+					<f:validator validatorId="regonValidator"/>
+				</h:inputText>
 				<h:outputText value="#{msg.jednorozecMagicznyLabel}"/>
-				<h:inputText id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}"/>
+				<h:selectBooleanCheckbox id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}" />
 	
 			</h:panelGrid>
 			

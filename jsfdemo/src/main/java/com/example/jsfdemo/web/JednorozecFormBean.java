@@ -3,7 +3,11 @@ package com.example.jsfdemo.web;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
 import javax.faces.model.ListDataModel;
+import javax.faces.validator.ValidatorException;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -51,5 +55,21 @@ public class JednorozecFormBean implements Serializable{
 	public ListDataModel<Jednorozec> getSearchImie(){
 		jednorozce.setWrappedData(jednorozecManager.getSearchImie(jednorozec));
 		return jednorozce;
+	}
+	
+	
+	
+	public void uniqueRegon(FacesContext context, UIComponent component, Object value) {
+
+		String regon = (String) value;
+
+		for (Jednorozec jednorozec : jednorozecManager.getJednorozce()) {
+			if (jednorozec.getRegon().equalsIgnoreCase(regon)) {
+				FacesMessage message = new FacesMessage(
+						"Osoba o tym numerze REGON juz istnieje");
+				message.setSeverity(FacesMessage.SEVERITY_ERROR);
+				throw new ValidatorException(message);
+			}
+		}
 	}
 }

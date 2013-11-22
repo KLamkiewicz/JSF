@@ -6,9 +6,10 @@ public class Jednorozec{
 	private int id;
 	private String imie;
 	@Max(2013)
+	@NotNull
 	private Integer rokUrodzenia;
 	private double dlugoscRogu;
-	private int regon;
+	private String regon = "";
 	private boolean magiczny;
 	
 	public Jednorozec(){
@@ -55,13 +56,12 @@ public class Jednorozec{
 		this.id = id;
 	}
 
-	public int getRegon() {
+	public String getRegon() {
 		return regon;
 	}
 
-	public void setRegon(int regon) {
+	public void setRegon(String regon) {
 		this.regon = regon;
-	}	
-	
-	
+	}
+
 }
