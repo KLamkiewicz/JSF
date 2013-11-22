@@ -10,7 +10,14 @@
 </h:head>
 <h:body>
   <h:outputStylesheet library="css" name="mojCss.css" target="body" />
-
+	
+	<div class="heading">
+	  <ui:insert name="heading">
+       #{msg.mainHeading}
+       
+     <h:graphicImage library="/jsfdemo/src/main/webapp/resources/"  name="plLogo.jpg"/>
+     </ui:insert>
+    </div>
 	<div class="menuAndContent">
 	 <div class="menu">
 	   <ui:insert name="menu">

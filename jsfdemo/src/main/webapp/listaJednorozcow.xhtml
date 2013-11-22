@@ -10,8 +10,8 @@
     <h:form>
     
     
-     <h:dataTable value="#{jednorozecBean.jednorozce}" var="item">
-      <f:facet name="header">#{msg.personAllLabel}</f:facet>
+     <h:dataTable value="#{jednorozecBean.jednorozce}" var="item" border="2">
+      <f:facet name="header">#{msg.allJednorozce}</f:facet>
       
       <h:column>
       	<f:facet name="header">#{msg.jednorozecNameLabel}</f:facet>
@@ -39,7 +39,7 @@
       </h:column>
       
       <h:column>
-        <f:facet name="header">usun</f:facet>
+        <f:facet name="header">#{msg.delete}</f:facet>
         <h:commandLink value="usun" action="#{jednorozecBean.deleteJednorozec}"/>
       </h:column> 
       
