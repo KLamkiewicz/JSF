@@ -18,11 +18,12 @@ public class RegonValidator implements Validator {
 		String regon = (String) value;
 		
 		FacesMessage message = new FacesMessage();
-		message.setDetail("Regon musi składać się z 9 cyfr");
-		message.setSummary("Regon musi składać się z 9 cyfr");
+		//message.setDetail("Regon musi składać się z 9 cyfr");
+		message.setSummary("REGON musi składać się z 9 cyfr");
 		message.setSeverity(FacesMessage.SEVERITY_ERROR);
 		
 		if(regon.length()==9){
+			message.setSummary("Bledny REGON");
 			int regonNumbers[] = new int[8];
 			int controlSum=0;
 			for(int i=0; i<=7; i++){
