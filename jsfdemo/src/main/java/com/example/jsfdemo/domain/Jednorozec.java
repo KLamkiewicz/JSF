@@ -14,6 +14,7 @@ public class Jednorozec{
 	@NotNull
 	private Integer rokUrodzenia;
 	@Past
+	@NotNull
 	private Date dataUrodzenia;
 	private double dlugoscRogu;
 	private String regon = "";

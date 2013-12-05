@@ -8,35 +8,46 @@
 	<ui:define name="content">
 					<h:outputText value="#{msg.addJednorozec}" />
 		<h:form id="jednorozecform">
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3" id="forma">
+			
 				<h:outputText value="#{msg.jednorozecNameLabel}" />
 				<h:inputText id="imie" value="#{jednorozecBean.jednorozec.imie}" />
+				<h:message for="imie"/>
 
 				<h:outputText value="#{msg.jednorozecRokUrodzeniaLabel}"/>
 				<p:calendar value="#{jednorozecBean.jednorozec.dataUrodzenia}" id="dataUrodzenia" /> 
+				<h:message for="dataUrodzenia"/>
 
 				<h:outputText value="#{msg.jednorozecDlugoscRoguLabel}"/>
 				<h:inputText id="dlugoscRogu" value="#{jednorozecBean.jednorozec.dlugoscRogu}">
 					<f:validateDoubleRange minimum="1"/>
 				</h:inputText>
+				<h:message for="dlugoscRogu"/>
+				
 				<h:outputText value="#{msg.regon}"/>
 				<h:inputText id="regon" value="#{jednorozecBean.jednorozec.regon}" validator="#{jednorozecBean.uniqueRegon}" required="#{true}">
 					<f:validator validatorId="regonValidator"/>
-					<f:ajax event="keyup" render="messages Test"/>
+					<f:ajax event="keyup" render="forma"/>
 				</h:inputText>
+				<h:message for="regon"/>
+				
 				<h:outputText value="#{msg.jednorozecMagicznyLabel}"/>
 				<h:selectBooleanCheckbox id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}" />
+				<h:message for="magiczny"/>
+				
 		        <h:outputText value="#{msg.ratingLabel}"/> 
-		       	<p:rating value="#{jednorozecBean.jednorozec.ocena}" /> 
+		       	<p:rating id="ocena" value="#{jednorozecBean.jednorozec.ocena}" /> 
+		       	<h:message for="ocena"/>
+		       	
 			</h:panelGrid>
 			
 <h:commandButton value="#{msg.jednorozecFormOKButton}" action="#{jednorozecBean.addJednorozec}">
 
 </h:commandButton>
- 
-                        <h:panelGrid id="Test">
+						<!-- <h:panelGrid id="Test">
                                 <h:messages id="messages" showDetail="#{true}" showSummary="#{false}" />
-                        </h:panelGrid>
+                        </h:panelGrid>  -->
+                       
 			
 		</h:form>
 	</ui:define>
