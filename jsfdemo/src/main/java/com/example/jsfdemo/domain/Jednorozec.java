@@ -1,13 +1,20 @@
 package com.example.jsfdemo.domain;
 
+
+
+import java.util.Date;
 import javax.validation.constraints.*;
+
+
 
 public class Jednorozec{
 	private int id;
+	@Size(min=3, max=30)
 	private String imie;
-	@Max(2013)
 	@NotNull
 	private Integer rokUrodzenia;
+	@Past
+	private Date dataUrodzenia;
 	private double dlugoscRogu;
 	private String regon = "";
 	private boolean magiczny;
@@ -71,6 +78,14 @@ public class Jednorozec{
 
 	public void setOcena(Integer ocena) {
 		this.ocena = ocena;
+	}
+
+	public Date getDataUrodzenia() {
+		return dataUrodzenia;
+	}
+
+	public void setDataUrodzenia(Date dataUrodzenia) {
+		this.dataUrodzenia = dataUrodzenia;
 	}
 
 	

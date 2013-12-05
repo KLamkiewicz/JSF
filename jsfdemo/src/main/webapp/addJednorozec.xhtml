@@ -11,8 +11,10 @@
 			<h:panelGrid columns="2">
 				<h:outputText value="#{msg.jednorozecNameLabel}" />
 				<h:inputText id="imie" value="#{jednorozecBean.jednorozec.imie}" />
+
 				<h:outputText value="#{msg.jednorozecRokUrodzeniaLabel}"/>
-				<h:inputText id="rokUrodzenia" value="#{jednorozecBean.jednorozec.rokUrodzenia}"/>
+				<p:calendar value="#{jednorozecBean.jednorozec.dataUrodzenia}" id="dataUrodzenia" /> 
+
 				<h:outputText value="#{msg.jednorozecDlugoscRoguLabel}"/>
 				<h:inputText id="dlugoscRogu" value="#{jednorozecBean.jednorozec.dlugoscRogu}">
 					<f:validateDoubleRange minimum="1"/>

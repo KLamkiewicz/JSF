@@ -16,7 +16,8 @@ public class JednorozecManager {
 		Jednorozec j = new Jednorozec();
 		j.setId(id);
 		j.setImie(jednorozec.getImie());
-		j.setRokUrodzenia(jednorozec.getRokUrodzenia());
+		//j.setRokUrodzenia(jednorozec.getRokUrodzenia());
+		j.setDataUrodzenia(jednorozec.getDataUrodzenia());
 		j.setDlugoscRogu(jednorozec.getDlugoscRogu());
 		j.setRegon(jednorozec.getRegon());
 		j.setMagiczny(jednorozec.isMagiczny());

@@ -2,6 +2,7 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
@@ -20,8 +21,11 @@
 		  <h:commandLink action="listaJednorozcow?faces-redirect=true">
 			<h:outputText value="#{msg.listaJednorozcowLabel}" />
 		  </h:commandLink>
-		  </li>
-	</ul>
+		  </li> 
+		</ul>
+		 <h:outputText id="msgCounter" value="#{msg.counter}" /> <br/> 
+		 <h:outputText id="counter" value="#{counterBean.count}" />  
+  		 <p:poll interval="1" listener="#{counterBean.increment}" update="counter" /> 
    </h:form>
   </div>
 </ui:composition>

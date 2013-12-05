@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
 	template="/templates/mojDefault.xhtml">
 	
 	<ui:define name="content">
@@ -10,46 +11,46 @@
     <h:form>
     
     
-     <h:dataTable value="#{jednorozecBean.searchImie}" var="item" border="2">
+     <p:dataTable value="#{jednorozecBean.searchImie}" var="item" border="2">
       <f:facet name="header">#{msg.allJednorozce}</f:facet>
       
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.jednorozecNameLabel}</f:facet>	
       	#{item.imie}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.jednorozecRokUrodzeniaLabel}</f:facet>
       	#{item.rokUrodzenia}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.jednorozecDlugoscRoguLabel}</f:facet>
       	#{item.dlugoscRogu}
-      </h:column>
+      </p:column>
 
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.regon}</f:facet>
       	#{item.regon}
-      </h:column>s
+      </p:column>s
 
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.jednorozecMagicznyLabel}</f:facet>
       	#{item.magiczny}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
       	<f:facet name="header">#{msg.ratingLabel}</f:facet>
       	#{item.ocena}
-      </h:column>
+      </p:column>
       
-      <h:column>
+      <p:column>
         <f:facet name="header">#{msg.delete}</f:facet>
         <h:commandLink value="usun" action="#{jednorozecBean.deleteJednorozec}"/>
-      </h:column> 
+      </p:column> 
       
       
-     </h:dataTable>
+     </p:dataTable>
     </h:form>
       
 	</ui:define>
