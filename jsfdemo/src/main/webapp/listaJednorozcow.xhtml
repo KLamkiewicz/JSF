@@ -9,7 +9,6 @@
 	
     <h:form>
     
-    
      <h:dataTable value="#{jednorozecBean.jednorozce}" var="item" border="2">
       <f:facet name="header">#{msg.allJednorozce}</f:facet>
       
@@ -39,10 +38,14 @@
       </h:column>
       
       <h:column>
+      	<f:facet name="header">#{msg.ratingLabel}</f:facet>
+      	#{item.ocena}
+      </h:column>
+      
+      <h:column>
         <f:facet name="header">#{msg.delete}</f:facet>
         <h:commandLink value="usun" action="#{jednorozecBean.deleteJednorozec}"/>
       </h:column> 
-      
       
      </h:dataTable>
     </h:form>

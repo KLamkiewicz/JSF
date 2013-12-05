@@ -20,6 +20,7 @@ public class JednorozecManager {
 		j.setDlugoscRogu(jednorozec.getDlugoscRogu());
 		j.setRegon(jednorozec.getRegon());
 		j.setMagiczny(jednorozec.isMagiczny());
+		j.setOcena(jednorozec.getOcena());
 		listaJednorozcow.add(j);
 		id++;
 	}

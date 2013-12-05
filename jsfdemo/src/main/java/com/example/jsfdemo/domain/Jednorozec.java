@@ -11,6 +11,7 @@ public class Jednorozec{
 	private double dlugoscRogu;
 	private String regon = "";
 	private boolean magiczny;
+	private Integer ocena;
 	
 	public Jednorozec(){
 		
@@ -57,11 +58,20 @@ public class Jednorozec{
 	}
 
 	public String getRegon() {
-		return regon;
+		return regon;	
 	}
 
 	public void setRegon(String regon) {
 		this.regon = regon;
 	}
 
+	public Integer getOcena() {
+		return ocena;
+	}
+
+	public void setOcena(Integer ocena) {
+		this.ocena = ocena;
+	}
+
+	
 }
