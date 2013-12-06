@@ -6,7 +6,8 @@
 	xmlns:h="http://java.sun.com/jsf/html">
   <div>
 	<h:form>
-	  <ul>
+		<!-- 
+		<ul>
 	  	<li>
 		  <h:commandLink action="home?faces-redirect=true">
 			<h:outputText value="#{msg.linkHome}" />
@@ -23,9 +24,22 @@
 		  </h:commandLink>
 		  </li> 
 		</ul>
-		 <h:outputText id="msgCounter" value="#{msg.counter}" /> <br/> 
+		-->
+  		 
+  		 
+  		     <p:menu>  
+			        <p:submenu label="Menu">   
+			        	<p:menuitem value="#{msg.linkHome}" outcome="home" />  
+			            <p:menuitem value="#{msg.linkAddJednorozec}" outcome="addJednorozec" />  
+			            <p:menuitem value="#{msg.listaJednorozcowLabel}" outcome="listaJednorozcow" />  
+			        </p:submenu>  
+    		</p:menu> 
+    		
+    	 <h:outputText id="msgCounter" value="#{msg.counter}" /> <br/> 
 		 <h:outputText id="counter" value="#{counterBean.count}" />  
-  		 <p:poll interval="1" listener="#{counterBean.increment}" update="counter" /> 
+  		 <p:poll interval="1" listener="#{counterBean.increment}" update="counter" />
+  		 
+  		  
    </h:form>
   </div>
 </ui:composition>

@@ -27,9 +27,12 @@
 				<h:outputText value="#{msg.regon}"/>
 				<h:inputText id="regon" value="#{jednorozecBean.jednorozec.regon}" validator="#{jednorozecBean.uniqueRegon}" required="#{true}">
 					<f:validator validatorId="regonValidator"/>
-					<f:ajax event="keyup" render="forma"/>
+					<f:ajax event="keyup" render="Test"/>
 				</h:inputText>
-				<h:message for="regon"/>
+				  <h:panelGrid id="Test">
+                       		<h:message for="regon"/>
+                       </h:panelGrid>
+				
 				
 				<h:outputText value="#{msg.jednorozecMagicznyLabel}"/>
 				<h:selectBooleanCheckbox id="magiczny" value="#{jednorozecBean.jednorozec.magiczny}" />
@@ -47,7 +50,7 @@
 						<!-- <h:panelGrid id="Test">
                                 <h:messages id="messages" showDetail="#{true}" showSummary="#{false}" />
                         </h:panelGrid>  -->
-                       
+                     
 			
 		</h:form>
 	</ui:define>

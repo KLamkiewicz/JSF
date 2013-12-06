@@ -28,7 +28,7 @@ body {
   left: 10px;
   height: 80%;
   width: 200px;
-  background: #FFFFFF;
+  background: #B80000;
   top: 200px;
 }
 
@@ -37,10 +37,15 @@ body {
   padding-left: 100px;
   padding-bottom: 20px;
   border: thin solid blue;
-  background: #FFFFFF;	
+  background: #B80000;	
   position:absolute;
   left: 225px; 
   right: 65px;
   top: 200px;
   height: 80%;
+}
+
+.ui-menu {
+    max-width: 140px;
+
 }
